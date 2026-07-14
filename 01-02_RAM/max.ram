@@ -1,0 +1,25 @@
+READ 10
+READ 20
+
+CHECK_LOOP:
+    LOAD 10
+    SUB =1
+    STORE 10
+    JZ END_LOOP
+
+    READ 30
+    LOAD 30
+    SUB 20
+    JGTZ SET_MAX
+
+    JMP CHECK_LOOP
+
+SET_MAX:
+    LOAD 30
+    STORE 20
+    JMP CHECK_LOOP
+
+END_LOOP:
+    LOAD 20
+    WRITE 20
+    HALT
